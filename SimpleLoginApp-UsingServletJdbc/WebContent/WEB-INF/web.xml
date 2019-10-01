@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SimpleLoginApp-UsingServletJdbc</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- <servlet>
+  	<servlet-name>controller</servlet-name>
+  	<servlet-class>com.bi.controller.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>controller</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping> -->
+  
+  <servlet>
+    <servlet-name>home</servlet-name>
+    <jsp-file>/WEB-INF/pages/home.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>home</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addstudent</servlet-name>
+    <jsp-file>/WEB-INF/pages/add_student.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addstudent</servlet-name>
+    <url-pattern>/service/admin/addStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>removestudent</servlet-name>
+    <jsp-file>/WEB-INF/pages/remove_student.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>removestudent</servlet-name>
+    <url-pattern>/service/admin/removeStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>searchbook</servlet-name>
+    <jsp-file>/WEB-INF/pages/search_book.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchbook</servlet-name>
+    <url-pattern>/service/searchBook</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>loginpage</servlet-name>
+    <jsp-file>/WEB-INF/pages/login_form.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginpage</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>loginerror</servlet-name>
+  	<jsp-file>/WEB-INF/pages/login_error.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginerror</servlet-name>
+  	<url-pattern>/loginerror</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Login filter configuration -->
+  <filter>
+    <filter-name>loginfilter</filter-name>
+    <filter-class>com.bi.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginfilter</filter-name>
+    <url-pattern>/service/admin/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>loginsubmit</servlet-name>
+  	<servlet-class>com.bi.controller.LoginSubmit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginsubmit</servlet-name>
+  	<url-pattern>/login_submit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+ 	<servlet-name>logout</servlet-name>
+ 	<jsp-file>/WEB-INF/pages/logout.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>logout</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Controller configuration -->
+</web-app>
